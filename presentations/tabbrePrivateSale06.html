@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap & Milestones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9fc;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 40px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 0 70px 40px;
+        }
+        .phases-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            flex-grow: 1;
+        }
+        .phase-card {
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 360px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .phase-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .phase-1 .phase-number { background: #1976d2; }
+        .phase-2 .phase-number { background: #2196f3; }
+        .phase-3 .phase-number { background: #03a9f4; }
+        .phase-4 .phase-number { background: #4caf50; }
+        .phase-5 .phase-number { background: #8bc34a; }
+        .phase-6 .phase-number { background: #cddc39; }
+        
+        .phase-title-container {
+            flex-grow: 1;
+        }
+        .phase-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a5276;
+            line-height: 1.2;
+        }
+        .phase-duration {
+            font-size: 16px;
+            color: #666;
+            margin-top: 3px;
+        }
+        .phase-content {
+            flex-grow: 1;
+        }
+        .milestone {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .milestone:last-child {
+            margin-bottom: 0;
+        }
+        .milestone-icon {
+            color: #4caf50;
+            margin-right: 10px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .milestone-text {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #2196f3;
+        }
+        .phase-decoration {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            opacity: 0.1;
+            transform: translate(20px, 20px);
+        }
+        .phase-1 .phase-decoration { background: #1976d2; }
+        .phase-2 .phase-decoration { background: #2196f3; }
+        .phase-3 .phase-decoration { background: #03a9f4; }
+        .phase-4 .phase-decoration { background: #4caf50; }
+        .phase-5 .phase-decoration { background: #8bc34a; }
+        .phase-6 .phase-decoration { background: #cddc39; }
+        
+        .phase-decoration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Roadmap & Milestones</h1>
+            <div class="accent-line"></div>
+        </div>
+        <div class="content">
+            <div class="phases-container">
+                <div class="phase-card phase-1">
+                    <div class="phase-header">
+                        <div class="phase-number">1</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Concept Stage</div>
+                            <div class="phase-duration">Now - Q1/26</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">check_circle</i>
+                            <div class="milestone-text">Validate models & strategy</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">check_circle</i>
+                            <div class="milestone-text">Recruit team</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">check_circle</i>
+                            <div class="milestone-text">Establish <span class="highlight">Tabbre Foundation</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">check_circle</i>
+                            <div class="milestone-text">List TABB/BRE on exchanges</div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+                
+                <div class="phase-card phase-2">
+                    <div class="phase-header">
+                        <div class="phase-number">2</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Initial Development</div>
+                            <div class="phase-duration">12 months</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">science</i>
+                            <div class="milestone-text">Solar farm <span class="highlight">proof of concept</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">account_balance</i>
+                            <div class="milestone-text">Launch production funding</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">developer_board</i>
+                            <div class="milestone-text">Develop the <span class="highlight">TabbreChain</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">precision_manufacturing</i>
+                            <div class="milestone-text">Prototype manufacturing plants</div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+                
+                <div class="phase-card phase-3">
+                    <div class="phase-header">
+                        <div class="phase-number">3</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Early Production</div>
+                            <div class="phase-duration">18 months</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">groups</i>
+                            <div class="milestone-text">Establish <span class="highlight">decentralized governance</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">account_balance_wallet</i>
+                            <div class="milestone-text">Establish BRE Monetary Authority</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">bolt</i>
+                            <div class="milestone-text">Commercial hydrogen production</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">shopping_cart</i>
+                            <div class="milestone-text">Commence <span class="highlight">energy sales in BRE</span></div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+                
+                <div class="phase-card phase-4">
+                    <div class="phase-header">
+                        <div class="phase-number">4</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Gigawatt Scale</div>
+                            <div class="phase-duration">24 months</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">trending_up</i>
+                            <div class="milestone-text">Complete gigawatt funding</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">factory</i>
+                            <div class="milestone-text">Scale up manufacturing plant</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">electric_bolt</i>
+                            <div class="milestone-text">Build out <span class="highlight">gigawatt production</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">local_fire_department</i>
+                            <div class="milestone-text">Pilot methane production</div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+                
+                <div class="phase-card phase-5">
+                    <div class="phase-header">
+                        <div class="phase-number">5</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Multi-Gigawatt Scale</div>
+                            <div class="phase-duration">Multi-year</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">attach_money</i>
+                            <div class="milestone-text">Complete multi-gigawatt funding</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">construction</i>
+                            <div class="milestone-text">Scale up manufacturing</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">power</i>
+                            <div class="milestone-text">Build out <span class="highlight">multi-gigawatt capacity</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">gas_meter</i>
+                            <div class="milestone-text">Commence full methane production</div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+                
+                <div class="phase-card phase-6">
+                    <div class="phase-header">
+                        <div class="phase-number">6</div>
+                        <div class="phase-title-container">
+                            <div class="phase-title">Terawatt Scale</div>
+                            <div class="phase-duration">2030s</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">all_inclusive</i>
+                            <div class="milestone-text">Scale up to <span class="highlight">multi-terawatt</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">currency_exchange</i>
+                            <div class="milestone-text">Start TABB buy and burn</div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">payments</i>
+                            <div class="milestone-text">Initiate <span class="highlight">Global UBI</span></div>
+                        </div>
+                        <div class="milestone">
+                            <i class="material-icons milestone-icon">public</i>
+                            <div class="milestone-text">BRE as global reserve currency</div>
+                        </div>
+                    </div>
+                    <div class="phase-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Opportunity & Financial Projections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9fc;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 40px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+            padding: 0 70px 40px;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .market-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .card-title .material-icons {
+            margin-right: 10px;
+            color: #2196f3;
+        }
+        .market-stat {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(76, 175, 80, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .stat-icon .material-icons {
+            font-size: 32px;
+            color: #2196f3;
+        }
+        .stat-content {
+            flex-grow: 1;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4caf50;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 18px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .advantage-item:last-child {
+            margin-bottom: 0;
+        }
+        .advantage-icon {
+            color: #4caf50;
+            margin-right: 15px;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .advantage-text {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #2196f3;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex-grow: 1;
+            position: relative;
+            height: 350px;
+        }
+        .projection-box {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(76, 175, 80, 0.1));
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .projection-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a5276;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .projection-title .material-icons {
+            margin-right: 10px;
+            color: #4caf50;
+        }
+        .projection-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .projection-item:last-child {
+            margin-bottom: 0;
+        }
+        .projection-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4caf50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .projection-text {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .big-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Market Opportunity & Financial Projections</h1>
+            <div class="accent-line"></div>
+        </div>
+        <div class="content">
+            <div class="left-section">
+                <div class="market-card">
+                    <div class="card-title">
+                        <i class="material-icons">trending_up</i>
+                        Global Energy Market
+                    </div>
+                    <div class="market-stat">
+                        <div class="stat-icon">
+                            <i class="material-icons">paid</i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">$6 Trillion</div>
+                            <div class="stat-label">Fossil fuel sales in 2024 (6% of global GDP)</div>
+                        </div>
+                    </div>
+                    <div class="market-stat">
+                        <div class="stat-icon">
+                            <i class="material-icons">pie_chart</i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">50%</div>
+                            <div class="stat-label">Tabbre's target market share by 2050</div>
+                        </div>
+                    </div>
+                    <div class="market-stat">
+                        <div class="stat-icon">
+                            <i class="material-icons">account_balance</i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">$6 Trillion</div>
+                            <div class="stat-label">Projected annual revenue (3% of global GDP)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="market-card">
+                    <div class="card-title">
+                        <i class="material-icons">thumb_up</i>
+                        Competitive Advantages
+                    </div>
+                    <div class="advantage-item">
+                        <i class="material-icons advantage-icon">savings</i>
+                        <div class="advantage-text">
+                            <span class="highlight">Much cheaper</span> than fossil fuels
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="material-icons advantage-icon">smart_toy</i>
+                        <div class="advantage-text">
+                            <span class="highlight">AI automation</span> reduces labor costs
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="material-icons advantage-icon">recycling</i>
+                        <div class="advantage-text">
+                            <span class="highlight">Recycling</span> eliminates need for new materials
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="material-icons advantage-icon">water</i>
+                        <div class="advantage-text">
+                            <span class="highlight">Free ocean space</span> in international waters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="chart-container">
+                    <div class="card-title">
+                        <i class="material-icons">insert_chart</i>
+                        Energy Market Projection
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                    
+                    <div class="projection-box">
+                        <div class="projection-title">
+                            <i class="material-icons">lightbulb</i>
+                            Profit Potential
+                        </div>
+                        <div class="projection-item">
+                            <div class="projection-icon">
+                                <i class="material-icons">trending_down</i>
+                            </div>
+                            <div class="projection-text">
+                                Near-<span class="big-number">zero marginal cost</span> of production
+                            </div>
+                        </div>
+                        <div class="projection-item">
+                            <div class="projection-icon">
+                                <i class="material-icons">attach_money</i>
+                            </div>
+                            <div class="projection-text">
+                                Essentially <span class="big-number">all revenue = profit</span>
+                            </div>
+                        </div>
+                        <div class="projection-item">
+                            <div class="projection-icon">
+                                <i class="material-icons">show_chart</i>
+                            </div>
+                            <div class="projection-text">
+                                <span class="big-number">Massive ROI</span> for early investors
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('marketChart').getContext('2d');
+            
+            const marketChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['2024', '2030', '2040', '2050'],
+                    datasets: [
+                        {
+                            label: 'Fossil Fuel Market ($ Trillion)',
+                            data: [6, 7, 9, 12],
+                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                            borderColor: 'rgba(231, 76, 60, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Tabbre Project Revenue ($ Trillion)',
+                            data: [0, 1, 3, 6],
+                            backgroundColor: 'rgba(76, 175, 80, 0.7)',
+                            borderColor: 'rgba(76, 175, 80, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Trillion USD'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

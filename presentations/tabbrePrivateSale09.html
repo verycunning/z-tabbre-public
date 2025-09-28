@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social & Environmental Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9fc;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 40px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+            padding: 0 70px 40px;
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            width: 100%;
+        }
+        .impact-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .climate-icon {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+        }
+        .ubi-icon {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+        }
+        .financial-icon {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+        .currency-icon {
+            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+        }
+        .card-icon .material-icons {
+            font-size: 32px;
+            color: white;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a5276;
+        }
+        .card-content {
+            flex-grow: 1;
+        }
+        .impact-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .impact-point:last-child {
+            margin-bottom: 0;
+        }
+        .point-icon {
+            color: #4caf50;
+            margin-right: 12px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .point-text {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #2196f3;
+        }
+        .card-decoration {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            opacity: 0.05;
+            transform: translate(25px, 25px);
+        }
+        .climate-decoration { background: #4caf50; }
+        .ubi-decoration { background: #2196f3; }
+        .financial-decoration { background: #ff9800; }
+        .currency-decoration { background: #9c27b0; }
+        
+        .card-decoration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Social & Environmental Impact</h1>
+            <div class="accent-line"></div>
+        </div>
+        <div class="content">
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="card-header">
+                        <div class="card-icon climate-icon">
+                            <i class="material-icons">eco</i>
+                        </div>
+                        <div class="card-title">Climate Impact</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Replacing fossil fuels</span> with clean energy
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Reducing greenhouse gas</span> emissions
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Carbon-neutral</span> energy production
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Minimal environmental disruption</span> in oceanic gyres
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-decoration climate-decoration"></div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="card-header">
+                        <div class="card-icon ubi-icon">
+                            <i class="material-icons">payments</i>
+                        </div>
+                        <div class="card-title">Global UBI</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                Profits from energy sales fund <span class="highlight">universal basic income</span>
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                Distributed in <span class="highlight">BRE</span> cryptocurrency
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Reducing global poverty</span> and inequality
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Financial security</span> for world's poorest
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-decoration ubi-decoration"></div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="card-header">
+                        <div class="card-icon financial-icon">
+                            <i class="material-icons">account_balance</i>
+                        </div>
+                        <div class="card-title">Financial Inclusion</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Decentralized global financial system</span>
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Accessible to everyone</span> with internet connection
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Reducing remittance costs</span> for foreign workers
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Banking the unbanked</span> worldwide
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-decoration financial-decoration"></div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="card-header">
+                        <div class="card-icon currency-icon">
+                            <i class="material-icons">public</i>
+                        </div>
+                        <div class="card-title">BRE as Global Currency</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Non-national self-sovereign</span> reserve currency
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Energy-backed</span> stable value coin
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Alternative to US dollar</span> dominance
+                            </div>
+                        </div>
+                        <div class="impact-point">
+                            <i class="material-icons point-icon">check_circle</i>
+                            <div class="point-text">
+                                <span class="highlight">Reducing geopolitical</span> economic imbalances
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-decoration currency-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

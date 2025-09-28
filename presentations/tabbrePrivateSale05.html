@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenomics & Investment Potential</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9fc;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 40px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+            padding: 0 70px 40px;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .tokenomics-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .card-title .material-icons {
+            margin-right: 10px;
+            color: #2196f3;
+        }
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .key-point .material-icons {
+            color: #4caf50;
+            margin-right: 10px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .key-point-text {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #2196f3;
+        }
+        .projection-box {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(76, 175, 80, 0.1));
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .projection-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a5276;
+            margin-bottom: 15px;
+        }
+        .projection-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .projection-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2196f3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .projection-text {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .big-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4caf50;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 40px;
+        }
+        .tokenomics-visual {
+            width: 100%;
+            max-width: 450px;
+            height: 450px;
+            position: relative;
+        }
+        .supply-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .supply-inner {
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        .supply-number {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .supply-label {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .supply-arrow {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: 3px dashed rgba(76, 175, 80, 0.6);
+            top: 10%;
+            left: 10%;
+            z-index: 1;
+        }
+        .supply-factor {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 3;
+        }
+        .factor-icon {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .factor-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .factor-1 {
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .factor-2 {
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+        }
+        .factor-3 {
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .factor-4 {
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Tokenomics & Investment Potential</h1>
+            <div class="accent-line"></div>
+        </div>
+        <div class="content">
+            <div class="left-section">
+                <div class="tokenomics-card">
+                    <div class="card-title">
+                        <i class="material-icons">token</i>
+                        TABB Token Economics
+                    </div>
+                    <div class="key-point">
+                        <i class="material-icons">verified</i>
+                        <div class="key-point-text">
+                            <span class="highlight">Fixed maximum supply</span> of 1 billion tokens
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <i class="material-icons">trending_down</i>
+                        <div class="key-point-text">
+                            Supply will <span class="highlight">shrink over time</span> through buybacks, burning, and slashing
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <i class="material-icons">insights</i>
+                        <div class="key-point-text">
+                            Increasing demand driven by staking rewards, governance rights, and collateral utility
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projection-box">
+                    <div class="projection-title">Projected Value (50% Market Share by 2050)</div>
+                    <div class="projection-item">
+                        <div class="projection-icon">
+                            <i class="material-icons">account_balance</i>
+                        </div>
+                        <div class="projection-text">
+                            Network Value: <span class="big-number">$120 trillion</span> (60% of global GDP)
+                        </div>
+                    </div>
+                    <div class="projection-item">
+                        <div class="projection-icon">
+                            <i class="material-icons">paid</i>
+                        </div>
+                        <div class="projection-text">
+                            Token Value: <span class="big-number">$120,000</span> (in 2024 dollar terms)
+                        </div>
+                    </div>
+                    <div class="projection-item">
+                        <div class="projection-icon">
+                            <i class="material-icons">pie_chart</i>
+                        </div>
+                        <div class="projection-text">
+                            Represents 12% of all global financial assets
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="tokenomics-visual">
+                    <div class="supply-circle">
+                        <div class="supply-inner">
+                            <div class="supply-number">1B</div>
+                            <div class="supply-label">TABB Supply</div>
+                        </div>
+                        <div class="supply-arrow"></div>
+                        
+                        <div class="supply-factor factor-1">
+                            <i class="material-icons factor-icon">local_fire_department</i>
+                            <div class="factor-label">Buy & Burn</div>
+                        </div>
+                        
+                        <div class="supply-factor factor-2">
+                            <i class="material-icons factor-icon">lock</i>
+                            <div class="factor-label">Staking</div>
+                        </div>
+                        
+                        <div class="supply-factor factor-3">
+                            <i class="material-icons factor-icon">gavel</i>
+                            <div class="factor-label">Slashing</div>
+                        </div>
+                        
+                        <div class="supply-factor factor-4">
+                            <i class="material-icons factor-icon">trending_up</i>
+                            <div class="factor-label">Demand Growth</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Token System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9fc;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 40px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+            padding: 0 70px 40px;
+        }
+        .tokens-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .token-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .token-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .token-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .tabb-icon {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+        }
+        .bre-icon {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+        }
+        .token-name {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .token-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .token-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            background: #f5f9fc;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .feature-icon {
+            font-size: 18px;
+            margin-right: 6px;
+        }
+        .tabb-feature {
+            color: #1976d2;
+        }
+        .bre-feature {
+            color: #388e3c;
+        }
+        .token-description {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+        .relationship {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+        }
+        .relationship-line {
+            width: 3px;
+            height: 80px;
+            background: linear-gradient(to bottom, #2196f3, #4caf50);
+            position: relative;
+        }
+        .relationship-text {
+            position: absolute;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .top-text {
+            top: -20px;
+        }
+        .bottom-text {
+            bottom: -20px;
+        }
+        .visual-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 40px;
+        }
+        .token-visual {
+            width: 100%;
+            max-width: 450px;
+            height: 450px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .inner-circle {
+            width: 65%;
+            height: 65%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+        .outer-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 30px solid;
+            border-color: #4caf50;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .outer-text {
+            position: absolute;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            background: #4caf50;
+            padding: 8px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        .top-text-visual {
+            top: 20px;
+        }
+        .bottom-text-visual {
+            bottom: 20px;
+        }
+        .material-icons {
+            color: white;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">The Token System</h1>
+            <div class="accent-line"></div>
+        </div>
+        <div class="content">
+            <div class="tokens-container">
+                <div class="token-card">
+                    <div class="token-header">
+                        <div class="token-icon tabb-icon">
+                            <i class="material-icons">currency_bitcoin</i>
+                        </div>
+                        <div>
+                            <div class="token-name">TABB</div>
+                            <div class="token-subtitle">Token for Administering the BRE Blockchain</div>
+                        </div>
+                    </div>
+                    <div class="token-features">
+                        <div class="feature tabb-feature">
+                            <i class="material-icons feature-icon">lock</i>
+                            Fixed Supply
+                        </div>
+                        <div class="feature tabb-feature">
+                            <i class="material-icons feature-icon">trending_down</i>
+                            Deflationary
+                        </div>
+                        <div class="feature tabb-feature">
+                            <i class="material-icons feature-icon">how_to_vote</i>
+                            Governance
+                        </div>
+                    </div>
+                    <div class="token-description">
+                        Used for fundraising, staking, collateral, and governance of the Tabbre ecosystem
+                    </div>
+                </div>
+                
+                <div class="relationship">
+                    <div class="relationship-line">
+                        <div class="relationship-text top-text">Energy Production</div>
+                        <div class="relationship-text bottom-text">Global UBI</div>
+                    </div>
+                </div>
+                
+                <div class="token-card">
+                    <div class="token-header">
+                        <div class="token-icon bre-icon">
+                            <i class="material-icons">bolt</i>
+                        </div>
+                        <div>
+                            <div class="token-name">BRE</div>
+                            <div class="token-subtitle">Basic Renewable Energy</div>
+                        </div>
+                    </div>
+                    <div class="token-features">
+                        <div class="feature bre-feature">
+                            <i class="material-icons feature-icon">balance</i>
+                            Stable Value
+                        </div>
+                        <div class="feature bre-feature">
+                            <i class="material-icons feature-icon">payments</i>
+                            Medium of Exchange
+                        </div>
+                        <div class="feature bre-feature">
+                            <i class="material-icons feature-icon">public</i>
+                            Global Currency
+                        </div>
+                    </div>
+                    <div class="token-description">
+                        Tied to Tabbre's energy production and used as the medium of exchange for energy sales
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visual-container">
+                <div class="token-visual">
+                    <div class="outer-ring">
+                        <div class="outer-text top-text-visual">BRE</div>
+                        <div class="outer-text bottom-text-visual">Energy Backed</div>
+                    </div>
+                    <div class="inner-circle">TABB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
